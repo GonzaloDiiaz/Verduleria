@@ -19,16 +19,16 @@ public class Main{
         boolean salir = false;
         while (!salir) {
 
-            System.out.println("--------Listado de precios--------" +
-                    "\n  Opcion    Producto        Precio" +
-                    "\n  1         Banana          $34Kg" +
-                    "\n  2         Manzana         $22Kg" +
-                    "\n  3         Naranja         $5Kg" +
-                    "\n  4         Frutilla        $20Kg" +
-                    "\n  5         Pera            $7Kg" +
-                    "\n  6         Mandaria        $4Kg" +
-                    "\n  7  Finalizar compra." +
-                    "\n Seleccione una opcion: ");
+            System.out.println("--------Listado de precios--------");
+            System.out.println("  Opcion    Producto        Precio");
+            mostrarProductos("1",banana);
+            mostrarProductos("2",manzana);
+            mostrarProductos("3",naranja);
+            mostrarProductos("4",frutilla);
+            mostrarProductos("5",pera);
+            mostrarProductos("6",mandarina);
+            System.out.println("7 Finalizar compra.");
+            System.out.println("Seleccione una opcion: ");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -58,7 +58,7 @@ public class Main{
                     break;
                 case 7:
                     salir = true;
-                    System.out.println("Ustedes finalizo la compra.");
+                    System.out.println("Usted finalizo la compra.");
                     System.out.println("Subtotal: " + subtotal);
                     System.out.println("total " + subtotal * iva);
                     break;
@@ -72,5 +72,8 @@ public class Main{
 
     private static void imprimir(String verdura) {
         System.out.println("Se agrego al carrito: " + verdura);
+    }
+    private static void mostrarProductos(String opcion,Verdura verdura){
+        System.out.println(opcion +" \t\t"+ verdura.getNombre() + "\t\t $ "+ verdura.getPrecio() + " Kg ");
     }
 }
